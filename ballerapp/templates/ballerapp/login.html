@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Document</title>
+
+    </head>
+
+    <body>
+
+        <form id="login_form" method="post" action="/ballerweb/login/">
+            {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50">
+            <br />
+            Password: <input type="password" name="password" value="" size="60">
+            <br />
+
+            <input class="btn btn-default" type="submit">
+
+        </form>
+
+        <a href="/ballerweb/home/"><button>Back To home</button></a>
+
+    </body>
+
+</html>
