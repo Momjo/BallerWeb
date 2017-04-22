@@ -84,14 +84,11 @@ def add_new_place(request):
 
         if form.is_valid():
             form.save()
-
             return HttpResponseRedirect('/ballerweb/home')
     else:
 
         form = AddNewPlace()
 
     args = {}
-
     args['form'] = form
-
     return render(request , 'ballerapp/create_new_place.html', args, {'form': form})
