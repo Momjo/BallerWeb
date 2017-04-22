@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load bootstrap3 %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,13 +15,18 @@
 
     </head>
 
-    <body>
+    <body class="body">
 
-        <img id="pic" src="{% static 'ballerapp/img/streetball.jpg'%}" alt="" style="width: 100%;height: 20%; ">
-        <hr/>
-        <a href="/ballerweb/register/"> <button class="btn btn-primary">Register</button> </a>
-        <a href="/ballerweb/login/"> <button type="button" class="btn btn-primary">Login</button> </a>
+            <img class="img-fluid" id="pic" src="{% static 'ballerapp/img/streetball.jpg'%}" alt="">
+            <hr/>
 
+            <a href="/ballerweb/register/"> <button class="btn btn-primary">Register</button> </a>
+
+            <a href="/ballerweb/login/"> <button type="button" class="btn btn-primary">Login</button> </a>
+            <a href="/ballerweb/add_place/"> <button type="button" class="btn btn-primary">Create Place</button> </a>
+            <hr/>
+            
     </body>
+
 
 </html>

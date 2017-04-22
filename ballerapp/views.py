@@ -2,8 +2,9 @@
 from django.contrib import auth
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render, render_to_response
-from ballerapp.forms import UserForm, UserProfileForm
+from ballerapp.forms import UserForm, UserProfileForm, AddNewPlace
 from django.contrib.auth import authenticate, login
+#from django.core.context_processors import csrf
 
 
 
@@ -32,7 +33,7 @@ def register(request):
 
                 profile.picture = request.FILES[ 'picture' ]
 
-            profile.save()
+            
             registered = True
 
         else:
@@ -74,3 +75,23 @@ def user_login(request):
 
     else:
         return render(request, 'ballerapp/login.html', {})
+
+
+def add_new_place(request):
+
+    if request.POST:
+        form = AddNewPlace(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect('/ballerweb/home')
+    else:
+
+        form = AddNewPlace()
+
+    args = {}
+
+    args['form'] = form
+
+    return render(request , 'ballerapp/create_new_place.html', args, {'form': form})

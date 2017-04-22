@@ -16,3 +16,10 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('website', 'picture')
+
+class AddNewPlace(forms.ModelForm):
+    
+    class Meta:
+
+        model = Adresse
+        fields = ('country', 'city', 'street', 'hous_number', 'place_pic',)
