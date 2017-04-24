@@ -3,11 +3,11 @@
 
 How to run:
 ```
-pip install django-bootstrap3
+$ pip install django-bootstrap3
 
-python manage.py migrate
+$ python manage.py migrate
 
-python manage.py runserver
+$ python manage.py runserver
 
 
 ```
