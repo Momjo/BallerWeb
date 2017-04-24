@@ -1,5 +1,5 @@
 
-# BallerWed
+# BallerWeb
 
 How to run:
 ```
