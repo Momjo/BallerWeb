@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login
 
 
 def index(request):
+    
    return render_to_response('ballerapp/base.html')
 
 
