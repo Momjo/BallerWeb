@@ -1,32 +1,28 @@
 {% load static %}
-{% load bootstrap3 %}
+
+
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
 
-
         <title>BallerWeb</title>
-
-
-        <link rel="stylesheet" href="{% static 'ballerapp/css/basedesign.css' %}" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
+		<link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
 
     </head>
 
-    <body class="body">
-
-            <img class="img-fluid" id="pic" src="{% static 'ballerapp/img/streetball.jpg'%}" alt="">
-            <hr/>
-
-            <a href="/ballerweb/register/"> <button class="btn btn-primary">Register</button> </a>
-
-            <a href="/ballerweb/login/"> <button type="button" class="btn btn-primary">Login</button> </a>
-            <a href="/ballerweb/add_place/"> <button type="button" class="btn btn-primary">Create Place</button> </a>
-            <hr/>
-            
+	<body class="body">
+		<img class="img-fluid col-xs-12 " id="pic" src="{% static 'ballerapp/img/streetball.jpg'%}" alt="" style="padding:0%;">
+		<div class="container-fluid">
+			<div class="row">
+				</hr>
+				<div class="btn  " style="float:right;">
+					<a href="/ballerweb/add_place/" class="btn btn-primary  active" role="button" > Create Place </a>
+					<a href="/ballerweb/login/" class="btn btn-primary active" role="button"> Login</a>
+					<a href="/ballerweb/register/" class="btn btn-primary active " role="button"> Register </a>
+				</div>
+			</div>
+		</div>
     </body>
-
-
 </html>
