@@ -6,19 +6,20 @@ This is the baller web app, simple as that.
 
 ### Dependencies
 
+```bash
+> pip install django-bootstrap3
 ```
-$ pip install django-bootstrap3
-```
+
 ### Migrations
 
 Should run on every pull.
 
-```
-$ python manage.py migrate
+```bash
+> python manage.py migrate
 ```
 
 ### Run
 
-```
-$ python manage.py runserver
+```bash
+> python manage.py runserver
 ```
