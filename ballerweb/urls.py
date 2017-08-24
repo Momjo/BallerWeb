@@ -10,7 +10,7 @@ urlpatterns = [
     #url(r'^ballerapp/', include('ballerapp.urls')),
    # url(r'^register/$', views.register, name='register'),
    # url('^register/', include('django.contrib.auth.urls) ),
-    url(r'^ballerweb/', include('ballerapp.urls')),
+    url(r'^ballerweb/', include('ballerapp.urls'), name="ballerweb"),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

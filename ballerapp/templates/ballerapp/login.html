@@ -1,29 +1,40 @@
 {% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap3 %}
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-
         <meta charset="UTF-8">
-        <title>BallerWeb</title>
+        <title>Login</title>
         <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
         <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
-
     </head>
-
     <body>
-            <div class="container">
-                <div class="row">
-                    <form method="post" action="/ballerweb/login/">
-                        {% csrf_token %}
-                        <label> <b>Username </b> </label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
-                        <label> <b>Password </b> </label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-                        <button type="submit">login</button>
-                    </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-dialog" >
+                        <div class="modal-content">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Login</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form action="" method="post" role="form" enctype="multipart/form-data"> {% csrf_token %}
+                                    <fieldset>
+                                        {{forms.errors}}
+                                        {{form.as_p}}
+                                        <input type="submit" class="btn btn-sm btn-success" value="Login">
+                                        <a href="/ballerweb/home/" class="btn btn-sm btn-success" role="button"> Back To home </a>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div><!--  end row  -->
+        </div><!--  end container  -->
     </body>
 </html>
+
+
 

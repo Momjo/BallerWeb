@@ -1,38 +1,38 @@
-
+{% load bootstrap3 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-
     <head>
         <title>BallerWeb</title>
+        <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
     </head>
-
     <body>
-
-
-        {% if registered %}
-
-            thank for registering
-
-        {% else %}
-
-            <form id="user_form" method="post" action="/ballerweb/register/" enctype="multipart/form-data">
-
-                {% csrf_token %}
-                {{user_form.as_p}}
-                {{profile_form.as_p}}
-
-                <input type="submit" name="submit" value="Register">
-
-            </form>
-
-        {% endif %}
-
-        <a href="/ballerweb/home/"><button>Back To home</button></a>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-dialog" >
+                        <div class="modal-content">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Register</h3>
+                            </div>
+                            <div class="panel-body">
+                                {% if registered %}
+                                    thank for registering
+                                    <br>
+                                    <a href="/ballerweb/home/" class="btn btn-sm btn-success" role="button"> Back To home </a>
+                                {% else %}
+                                    <form id="user_form" method="post" action="/ballerweb/register/" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{user_form.as_p}}
+                                        {{profile_form.as_p}}
+                                        <input class="btn btn-sm btn-success" type="submit" name="submit" value="Register">
+                                        <a href="/ballerweb/home/" class="btn btn-sm btn-success" role="button"> Back To home </a>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--  end row  -->
+        </div><!--  end container  -->
     </body>
-
-
-
-
-</html>
