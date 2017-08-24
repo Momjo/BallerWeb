@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
 from ballerapp.models import UserProfile, Adresse
-from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import authenticate, login, logout, get_user_model
 
 User = get_user_model()

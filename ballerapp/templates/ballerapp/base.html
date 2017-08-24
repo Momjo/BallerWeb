@@ -14,16 +14,10 @@
 			<div class="row">
 				</hr>
 				<div class="btn  " style="float:right;">
-					{% if user.is_authenticated %}
-						<div>
-							{{  request.user.username }}
-						</div>
-						<a href="/ballerweb/logout/" class="btn btn-primary active" role="button"> logout</a>
-					{% else %}
-						<a href="/ballerweb/login/" class="btn btn-primary active" role="button"> Login</a>
-						<a href="/ballerweb/register/" class="btn btn-primary active " role="button"> Register </a>
-					{% endif %}
-						<a href="/ballerweb/add_place/" class="btn btn-primary  active" role="button" > Create Place </a>
+					<a href="/ballerweb/logout/" class="btn btn-primary active" role="button"> logout</a>
+					<a href="/ballerweb/login/" class="btn btn-primary active" role="button"> Login</a>
+					<a href="/ballerweb/register/" class="btn btn-primary active " role="button"> Register </a>
+					<a href="/ballerweb/add_place/" class="btn btn-primary  active" role="button" > Create Place </a>
 				</div>
 			</div>
 		</div>
