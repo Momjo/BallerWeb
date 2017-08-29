@@ -4,6 +4,9 @@
 <html lang="en">
     <head>
         <title>Add New Place</title>
+
+        <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
+        <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
     </head>
     <body>
      <div class="container">
@@ -12,7 +15,7 @@
                     <div class="modal-dialog" >
                         <div class="modal-content">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Add Place</h3>
+                                <h3 class="panel-title"><b>Add Place</b> </h3>
                             </div>
                             <div class="panel-body">
                                 <form action="/ballerweb/add_place/" method="post" role="form" >
