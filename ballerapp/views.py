@@ -5,7 +5,6 @@ from ballerapp.forms import(
            AddNewPlace,
            UserLoginForm
         )
-
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib import auth
 from django.shortcuts import render, render_to_response, redirect
@@ -15,17 +14,13 @@ from django.views.generic.list import ListView
 from django.views.generic import TemplateView
 
 
-
-
 """def index(request):
     user = "%s" %(request.user)
     adresse = Adresse.objects.all()
-
     context={
         "username": user,
         "adresse": adresse,
     }
-
     return render(request, "ballerapp/base.html", context)
 """
 
@@ -33,7 +28,6 @@ from django.views.generic import TemplateView
 class AdresseListView(ListView):
     model = Adresse
     #template_name = "ballerapp/base.html"
-
     def get_context_data(self, **kwargs):
         context = super(AdresseListView, self).get_context_data(**kwargs)
         context['adresse']= Adresse.objects.all()
