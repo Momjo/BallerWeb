@@ -5,18 +5,33 @@ from ballerapp.forms import(
            AddNewPlace,
            UserLoginForm
         )
-
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib import auth
 from django.shortcuts import render, render_to_response, redirect
 from django.contrib.auth import authenticate, login, logout, get_user_model
+from ballerapp.models import Adresse
+from django.views.generic.list import ListView
+from django.views.generic import TemplateView
 
 
+"""def index(request):
+    user = "%s" %(request.user)
+    adresse = Adresse.objects.all()
+    context={
+        "username": user,
+        "adresse": adresse,
+    }
+    return render(request, "ballerapp/base.html", context)
+"""
 
 
-
-def index(request):
-   return render_to_response('ballerapp/base.html')
+class AdresseListView(ListView):
+    model = Adresse
+    #template_name = "ballerapp/base.html"
+    def get_context_data(self, **kwargs):
+        context = super(AdresseListView, self).get_context_data(**kwargs)
+        context['adresse']= Adresse.objects.all()
+        return context
 
 
 def login_view(request):
@@ -65,6 +80,7 @@ def register_view(request):
             if 'picture' in request.FILES :
                 profile.picture = request.FILES[ 'picture' ]
             registered = True
+            login(request, user)
         else:
             print( user_form.errors, profile_form.errors)
     else:

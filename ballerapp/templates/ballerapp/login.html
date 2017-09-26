@@ -19,7 +19,8 @@
                                 <h3 class="panel-title">Login</h3>
                             </div>
                             <div class="panel-body">
-                                <form action="" method="post" role="form" enctype="multipart/form-data"> {% csrf_token %}
+                                <form action="" method="post" role="form" enctype="multipart/form-data">
+                                    {% csrf_token %}
                                     <fieldset>
                                         {{forms.errors}}
                                         {{form.as_p}}
@@ -31,10 +32,9 @@
                         </div>
                     </div>
                 </div>
-            </div><!--  end row  -->
-        </div><!--  end container  -->
+            </div>
+            <!--  end row  -->
+        </div>
+        <!--  end container  -->
     </body>
 </html>
-
-
-
