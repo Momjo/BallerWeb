@@ -3,24 +3,21 @@
 <html lang="en">
     <head>
         <title>BallerWeb</title>
-		<link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
-		<link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
+        <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
+        <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
     </head>
-	<body class="body">
-
+    <body class="body">
         <img class="img-fluid col-xs-12 " id="pic" src="{% static 'ballerapp/img/streetball.jpg'%}" alt="" style="padding:0%;">
-		<div class="container">
-
+        <div class="container">
             <div class="row">
                 <div class="button btn" style="float:right;">
-                        <a href="/ballerweb/logout/" class="btn btn-primary active" role="button"> logout</a>
-                        <a href="/ballerweb/login/" class="btn btn-primary active" role="button"> Login</a>
-                        <a href="/ballerweb/register/" class="btn btn-primary active " role="button"> Register </a>
-                        <a href="/ballerweb/add_place/" class="btn btn-primary  active" role="button" > Add Place </a>
+                    <a href="/ballerweb/logout/" class="btn btn-primary active" role="button"> logout</a>
+                    <a href="/ballerweb/login/" class="btn btn-primary active" role="button"> Login</a>
+                    <a href="/ballerweb/register/" class="btn btn-primary active " role="button"> Register </a>
+                    <a href="/ballerweb/add_place/" class="btn btn-primary  active" role="button" > Add Place </a>
                 </div>
             </div>
             <div class="row">
-
                 {% for adresse in adresse %}
                 <div class="col-md-3">
                     <ul class="cards">
@@ -33,7 +30,6 @@
                                 </div>
                             </div>
                             <ul class="card__icons">
-
                                 <li><i class="fa fa-coffee">{{ adresse.country }},</i></li>
                                 <li><i class="fa fa-bolt">{{ adresse.city }},</i></li>
                                 <li><i class="fa fa-bomb">{{ adresse.street }},</i></li>
@@ -42,12 +38,10 @@
                             <p>Add By {{ username }}</p>
                         </li>
                     </ul>
-
                 </div>
                 {% endfor %}
             </div>
-            </div>{# row #}
+        </div>{# row #}
         </div>{# container #}
     </body>
 </html>
-
