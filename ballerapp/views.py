@@ -23,14 +23,15 @@ from django.views.generic import TemplateView
     }
     return render(request, "ballerapp/base.html", context)
 """
-
-
 class AdresseListView(ListView):
+
     model = Adresse
+
     #template_name = "ballerapp/base.html"
     def get_context_data(self, **kwargs):
         context = super(AdresseListView, self).get_context_data(**kwargs)
         context['adresse']= Adresse.objects.all()
+        img = Adresse.place_pic
         return context
 
 
@@ -57,6 +58,7 @@ def add_new_place(request):
     if request.POST:
         form = AddNewPlace(request.POST)
         if form.is_valid():
+
             form.save()
             return HttpResponseRedirect('/ballerweb/home')
     else:

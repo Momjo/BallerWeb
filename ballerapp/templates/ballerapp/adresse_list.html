@@ -1,48 +1,97 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>BallerWeb</title>
-        <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
-        <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
-    </head>
-    <body class="body">
-        <img class="img-fluid col-xs-12 " id="pic" src="{% static 'ballerapp/img/streetball.jpg'%}" alt="" style="padding:0%;">
-        <div class="container">
-            <div class="row">
-                <div class="button btn " style="float:right;">
-                    <a href="/ballerweb/logout/" class="btn btn-primary active" role="button"> logout</a>
-                    <a href="/ballerweb/login/" class="btn btn-primary active" role="button"> Login</a>
-                    <a href="/ballerweb/register/" class="btn btn-primary active " role="button"> Register </a>
-                    <a href="/ballerweb/add_place/" class="btn btn-primary  active" role="button" > Add Place </a>
-                </div>
+
+<head>
+    <title>BallerWeb</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'ballerapp/js/base.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="body">
+    <div class="background-img">
+        <img src="{% static 'ballerapp/img/streetball_1.jpg'%}" class="img-fluid" alt="Responsive image">
+    </div>
+
+    <nav class="navbar-static-top navbar-inverse ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">BallerWeb</a>
             </div>
-            {# end row #}
-            <hr style="border:1px solid black">
-            <div class="row">
-                {% for adresse in adresse %}
-                <div class="col-xs-6 col-md-3">
-                    <ul class="cards">
-                        <li class="card">
-                            <div class="card__inner">
-                                <h2>The Basketball <small>Place</small></h2>
-                                <div class="card__buttons">
-                                    <a href="#">Maximize</a>
-                                    <a href="#">Google map</a>
-                                </div>
-                            </div>
-                            <ul class="card__icons">
-                                <li><i class="fa fa-coffee">{{ adresse.country }},</i></li>
-                                <li><i class="fa fa-bolt">{{ adresse.city }},</i></li>
-                                <li><i class="fa fa-bomb">{{ adresse.street }},</i></li>
-                                <li><i class="fa fa-cutlery">{{ adresse.hous_number }}</i></li>
-                            </ul>
-                            <p>Add By {{ username }}</p>
-                        </li>
-                    </ul>
+            <ul class="nav navbar-nav">
+                {# Hier Kommt die Profile Foto #}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/ballerweb/logout/"><span class=""></span> Logout</a></li>
+                <li><a href="/ballerweb/add_place/"><span class=""></span> Add Place</a></li>
+                <li><a href="/ballerweb/register/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/ballerweb/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
                 </div>
-                {% endfor %}
-            </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
         </div>
-    </body>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            {% for adresse in adresse %}
+            <div class="col-xs-6 col-md-3">
+                <figure class="snip1583">
+                    <img src="http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-play-basketball-649.png" alt="sample68" />
+                    <div class="icons">
+                        <a onclick="showImage('https://maps.googleapis.com/maps/api/staticmap?center={{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}&zoom=18&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C{{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}')"><i class="glyphicon glyphicon-globe"></i></a>
+                        <a><i class="glyphicon glyphicon-zoom-in"></i></a>
+                    </div>
+                    <figcaption>
+
+                        <h3> {{ adresse.country }}, {{ adresse.city }}, {{ adresse.street }}, {{ adresse.hous_number }}</h3>
+
+                    </figcaption>
+                </figure>
+
+            </div>
+
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <img class="picture-modal-img">
+
+            <!--
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            -->
+        </div>
+    </div>
+    </div>
+</body>
+
 </html>
