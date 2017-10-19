@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django import forms
-from PIL import Image
+
 
 class Adresse(models.Model):
     country = models.CharField(max_length=20)
