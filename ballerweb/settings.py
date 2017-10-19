@@ -38,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ballerapp.apps.BallerappConfig',
-    'bootstrap3',
-    'registration',
-    'crispy_forms'
+
 ]
 
 MIDDLEWARE = [
