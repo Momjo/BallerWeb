@@ -4,11 +4,7 @@ This is the baller web app, simple as that.
 
 ## Development
 
-### Dependencies
 
-```bash
-> pip install django-bootstrap3
-```
 
 ### Migrations
 
