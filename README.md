@@ -9,8 +9,8 @@ This is the baller web app, simple as that.
 Should install dependencies and migrate database on every pull:
 
 ```bash
-> python manage.py migrate
 > pip install -r requirements.txt
+> python manage.py migrate
 ```
 
 ### Run
