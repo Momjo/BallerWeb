@@ -22,203 +22,48 @@
 }
 
 body {
-    background: whiteSmoke;
+    font-family: "Raleway", sans-serif
 }
 
 .cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-@media (max-width:400px) {
-    .cards {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-}
-
-.card {
-    position: relative;
-    width: 112%;
-    margin: 1%;
-    background: whiteSmoke;
-    box-shadow: 1px 1px 5px #999;
-    list-style: none;
-}
-
-@media (max-width: 815px) {
-    .card {
-        width: 48%;
-    }
-}
-
-@media (max-width: 550px) {
-    .card {
-        width: 100%;
-    }
-}
-
-.card__inner {
-    position: relative;
-    background-color: black;
-    background-size: cover;
-    overflow: hidden;
-}
-
-.card__inner h2 {
-    color: white;
-    margin: 0;
-    padding: 30% 0;
-    text-shadow: 1px 1px 3px #000;
-    line-height: 18px;
-    text-transform: uppercase;
-}
-
-.card__inner h2 small {
-    font-style: italic;
-    display: inherit;
-}
-
-.card__buttons {
-    position: absolute;
-    width: 100%;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transition: -webkit-transform .5s ease;
-    transition: -webkit-transform .5s ease;
-    transition: transform .5s ease;
-    transition: transform .5s ease, -webkit-transform .5s ease;
-}
-
-.card__buttons a {
-    position: relative;
-    float: left;
-    width: 50%;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-}
-
-.card__buttons a:first-child {
-    background: #fff;
-    border-right: 1px solid #ccc;
-}
-
-.card__buttons a:last-child {
-    background: #ffde00;
-}
-
-.card__buttons a:hover {
-    color: #ffde00;
-    background: #000;
-}
-
-.card:hover .card__buttons {
-    -webkit-transform: translateY(-38px);
-    transform: translateY(-38px);
-}
-
-.card__tagline {
-    font-size: 1rem;
-    font-weight: 100;
-}
-
-.card__icons {
-    margin: 0 0 50px;
-    padding: 0;
-    list-style: none;
-}
-
-.card__icons li {
-    display: inline-block;
-    padding: 0 10px 10px;
-}
-
-.card__icons .fa {
-    font-size: 1.5rem;
-}
-
-.card__icons .fa:before {
-    font-size: 1.2rem;
-    display: block;
-    padding-bottom: 5px;
-}
-
-.card p {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-}
-
-
-/* Test */
-
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,700');
-@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-.snip1583 {
-    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin: 8px;
-    min-width: 230px;
-    max-width: 315px;
-    width: 100%;
     font-size: 16px;
     background-color: #fff;
     color: #111;
     line-height: 1.2em;
-    text-align: left;
 }
 
-.snip1583 *,
-.snip1583 *:before,
-.snip1583 *:after {
+.cards *,
+.cards *:before,
+.cards *:after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
 
-.snip1583 img {
+.cards img {
     max-width: 100%;
     vertical-align: top;
 }
 
-.snip1583 figcaption {
-    padding: 12px;
-    background-color: darkslategrey;
-}
 
-.snip1583 h3 {
+
+.cards address {
     font-size: 1.6rem;
     font-weight: 500;
     margin: 0 0 4px;
-    color: #f1f1f1;
+    color: #3a3333;
+    padding-left: 47px;
+    width: 250%;
+
 }
 
-.snip1583 .price {
-    margin: 8px 0;
-    font-weight: 700;
-    color: #4da3e2;
-    font-size: 1.5rem;
-}
 
-.snip1583 .icons {
+
+.cards .icons {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -230,14 +75,17 @@ body {
     justify-content: flex-start;
 }
 
-.snip1583 .icons a {
+.cards .icons a {
     margin: 2px;
     opacity: 0;
     -webkit-transform: translateY(50%);
     transform: translateY(50%);
+    text-decoration: none;
+
+
 }
 
-.snip1583 .icons a i {
+.cards .icons a i {
     display: block;
     font-size: 23.52941176px;
     line-height: 40px;
@@ -245,47 +93,98 @@ body {
     background-color: #ffffff;
     text-align: center;
     color: #000000;
+    
 }
 
-.snip1583 .icons a i:hover {
-    background-color: #4da3e2;
-    color: #ffffff;
-    cursor: pointer;
-}
 
-.snip1583:hover a,
-.snip1583.hover a {
+
+
+.cards:hover a,
+.cards.hover a {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
+
 }
 
-.snip1583:hover a:nth-child(2),
-.snip1583.hover a:nth-child(2) {
+.cards:hover a:nth-child(2),
+.cards.hover a:nth-child(2) {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
 }
 
-.snip1583:hover a:nth-child(3),
-.snip1583.hover a:nth-child(3) {
+.cards:hover a:nth-child(3),
+.cards.hover a:nth-child(3) {
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
+}
+
+.cards:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cards span {
+    font-size: 1.8em;
+    left: auto;
+    right: 134px;
+    top: 14px;
+}
+
+.text-on-pannel {
+    background: rgb(255, 255, 255) none repeat scroll 0 0;
+    height: auto;
+    margin-left: 25%;
+    padding: 2px 2px;
+    position: absolute;
+    margin-top: -47px;
+    color: rgba(92, 92, 92, 0.651)
+}
+
+.panel {
+    /* for text on pannel */
+    border-radius: 0px;
+    border-left-style: none;
+    border-right-style: none;
+}
+
+.panel-body {
+    padding-top: 30px !important;
 }
 
 
 /* Demo purposes only */
 
 body {
-    background-color: rgba(33, 33, 33, 0.88);
-    text-align: center;
+    background-color: rgba(247, 242, 242, 0.39);
 }
 
-@media (min-width: 992px) {
-    .col-md-3 {
-        width: 33%;
-    }
-}
-
-.row{
+.row {
     padding-top: 35px;
+}
+
+
+/* Profile */
+
+#profile {
+    border-radius: 50%;
+    width: 45px;
+    margin-top: 3px;
+}
+
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: #222222;
+    padding-top: 25px;
+    margin-top: 118px;
+}
+
+.container-fluid {
+    box-shadow: 0 10px 53px #7474747d;
 }
