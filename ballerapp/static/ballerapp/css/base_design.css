@@ -47,6 +47,7 @@ body {
 .cards img {
     max-width: 100%;
     vertical-align: top;
+    padding-bottom: 12px;
 }
 
 
@@ -90,10 +91,14 @@ body {
     font-size: 23.52941176px;
     line-height: 40px;
     width: 40px;
-    background-color: #ffffff;
+    background-color: #77777757;
     text-align: center;
-    color: #000000;
+    color: #39CCCC;
     
+}
+.cards .icons a i:hover{
+    background-color: #777777d1;
+    transition: all 0.50s;
 }
 
 
@@ -134,7 +139,7 @@ body {
     background: rgb(255, 255, 255) none repeat scroll 0 0;
     height: auto;
     margin-left: 25%;
-    padding: 2px 2px;
+    padding: 3px 2px;
     position: absolute;
     margin-top: -47px;
     color: rgba(92, 92, 92, 0.651)
@@ -152,7 +157,9 @@ body {
 }
 
 
-/* Demo purposes only */
+.modal-dialog{
+    padding-top: 10%;
+}
 
 body {
     background-color: rgba(247, 242, 242, 0.39);

@@ -46,7 +46,7 @@ def login_view(request):
             login(request, user)
             print(request.user.is_authenticated())
             return redirect('/ballerweb/home/')
-    return render(request, "ballerapp/login.html", {"form":form})
+    return render(request, " ballerapp/login.html", {"form": form})
 
 
 def logout_view(request):
@@ -65,7 +65,7 @@ def add_new_place(request):
         form = AddNewPlace()
     args = {}
     args['form'] = form
-    return render(request , 'ballerapp/create_new_place.html', args, {'form': form})
+    return render(request, 'ballerapp/create_new_place.html', args, {'form': form})
 
 
 def register_view(request):
@@ -84,9 +84,9 @@ def register_view(request):
             registered = True
             login(request, user)
         else:
-            print( user_form.errors)# , profile_form.errors
+            print(user_form.errors)# , profile_form.errors
     else:
         user_form = UserForm()
         #profile_form = UserProfileForm()
-    return render(request, 'ballerapp/register.html',{ 'user_form': user_form, 'registered': registered} # 'profile_form': profile_form,
+    return render(request, 'ballerapp/register.html', {'user_form': user_form, 'registered': registered} # 'profile_form': profile_form,
     )
