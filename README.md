@@ -16,5 +16,5 @@ Should install dependencies and migrate database on every pull:
 ### Run
 
 ```bash
-> java Person
+> python manage.py runserver
 ```
