@@ -22,7 +22,7 @@ class UserForm(forms.ModelForm):
 class AddNewPlace(forms.ModelForm):
     class Meta:
         model = Adresse
-        fields = ('country', 'city', 'street', 'hous_number', 'picture')
+        fields = ('country', 'city', 'street', 'hous_number', 'place_pic')
 
 
 

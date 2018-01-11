@@ -31,7 +31,8 @@ class AdresseListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(AdresseListView, self).get_context_data(**kwargs)
         context['adresse']= Adresse.objects.all()
-        img = Adresse.picture
+        img = Adresse.place_pic
+
         return context
 
 
@@ -46,7 +47,7 @@ def login_view(request):
             login(request, user)
             print(request.user.is_authenticated())
             return redirect('/ballerweb/home/')
-    return render(request, " ballerapp/login.html", {"form": form})
+    return render(request, 'ballerapp/login.html', {"form": form})
 
 
 def logout_view(request):
@@ -55,10 +56,10 @@ def logout_view(request):
 
 
 def add_new_place(request):
-    if request.POST:
-        form = AddNewPlace(request.POST)
-        if form.is_valid():
 
+    if request.method == 'POST':
+        form = AddNewPlace(request.POST or None, request.FILES or None)
+        if form.is_valid():
             form.save()
             return HttpResponseRedirect('/ballerweb/home')
     else:
