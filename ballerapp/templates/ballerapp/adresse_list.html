@@ -77,13 +77,13 @@
                                 </a>
                             </p>
                             <p id="btn-court">
-                                {% if instance.image %}
-                                <a onclick="maximize( '{{ adresse.place_pic.url}}' )">
+
+                                <a onclick="maximize( '{{ adresse.picture.url}}' )">
                                     <button class="btn btn-5 btn-5a icon-cart btn-secondary"><span>Court</span></button>
                                 </a>
-                                {% else %}
+
                                 <img src="{% static 'images/symbol.png' %}">
-                                {% endif %}
+
                             </p>
                         </section>
                     </div>
