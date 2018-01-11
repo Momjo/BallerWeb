@@ -26,7 +26,7 @@ SECRET_KEY = 'p1t%6=5ermfl5t8hwg*4@kh-o*-$3h+^u3=%d&8ym-!w8y#-ij'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'vbox'
+   
 ]
 
 
