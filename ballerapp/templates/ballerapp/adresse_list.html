@@ -5,13 +5,27 @@
 <head>
     <title>BallerWeb</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+            crossorigin="anonymous"></script>
+
     <script src="{% static 'ballerapp/js/base.js' %}"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+
     <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 </head>
 
@@ -19,121 +33,95 @@
 <div class="background-img">
     <img src="{% static 'ballerapp/img/streetball_1.jpg'%}" class="img-fluid" alt="Responsive image">
 </div>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#">BallerWeb</a>
+    <img id="profile" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar">
 
-<nav class="scroll-navbar navbar-static-top navbar-inverse ">
-    <div class="container-fluid">
+    <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li class="navbar-item">
+            <a class="nav-link" href="/ballerweb/logout/">Logout</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/ballerweb/add_place/">Add Courts</a>
+        </li>
+        {%else%}
+        <li class="navbar-item">
+            <a class="nav-link" href="/ballerweb/login/">Login</a>
+        </li>
+        <li class="navbar-item">
+            <a class="nav-link" href="/ballerweb/register/">Register</a>
+        </li>
 
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">BallerWeb</a>
-            <img id="profile" src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar">
-        </div>
-        <div class="page_navbar">
-            <ul class="nav navbar-nav navbar-right">
-
-                <li>
-                    <a href="/ballerweb/logout/">
-                        <span class=""></span> Logout</a>
-                </li>
-                <li>
-                    <a href="/ballerweb/add_place/">
-                        <span class=""></span> Add Place</a>
-                </li>
-                <li>
-                    <a href="/ballerweb/register/">
-                        <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                </li>
-                <li>
-                    <a href="/ballerweb/login/">
-                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
-                </li>
-            </ul>
-        </div>
-        <form class="navbar-form navbar-right">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-    </div>
+        {% endif %}
+    </ul>
 </nav>
 <div class="container">
     <div class="row">
-        {% for adresse in adresse %}
-
-        <div class="col-md-4">
-            <div class="cards thumbnail ">
-                {% if adresse.place_pic %}
-
-                    <img src="{{ adresse.place_pic.url}}">
-                {% else %}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <br/>
+            <div class="card-columns">
+                {% for adresse in adresse %}
+                <div class="card">
+                    {% if adresse.place_pic %}
+                    <img src="{{ adresse.place_pic.url }}" class="card-img-top" alt="Card image"/>
+                    {% else %}
                     <h2>no Picture</h2>
-                {%endif%}
-
-
-
-
-                <div class="icons">
-                    <a onclick="showImage('https://maps.googleapis.com/maps/api/staticmap?center={{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}&zoom=18&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C{{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}')">
-                        <i class="glyphicon glyphicon-globe"></i>
-                    </a>
-                    <a>
-                        <i class="glyphicon glyphicon-zoom-in"></i>
-                    </a>
-                </div>
-                <div class="caption ">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h3 class="text-on-pannel">
-                                <strong class="text-uppercase"> Address </strong>
-                            </h3>
-                            <span class="glyphicon glyphicon-map-marker"></span>
-                            <div class=" col-md-6">
-                                <address>
-
-                                    {{ adresse.street }}{{ adresse.hous_number }}<br>
-                                    {{ adresse.city }}<br>
-                                    {{ adresse.country }}
-                                </address>
-
-                            </div>
-                           
+                    {%endif%}
+                    <div class="cards-icons">
+                        <section class="color-5">
+                            <p id="btn-location">
+                                <a onclick="showImage('https://maps.googleapis.com/maps/api/staticmap?center={{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}&zoom=18&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C{{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}')">
+                                    <button class="btn btn-5 btn-5a icon-cart btn-secondary"><span>Location</span>
+                                    </button>
+                                </a>
+                            </p>
+                            <p id="btn-court">
+                                {% if instance.image %}
+                                <a onclick="maximize( '{{ adresse.place_pic.url}}' )">
+                                    <button class="btn btn-5 btn-5a icon-cart btn-secondary"><span>Court</span></button>
+                                </a>
+                                {% else %}
+                                <img src="{% static 'images/symbol.png' %}">
+                                {% endif %}
+                            </p>
+                        </section>
+                    </div>
+                    <div class="card-details">
+                        <h3 class=" text-on-pannel">
+                            <span>
+                                <strong>Address</strong>
+                            </span>
+                        </h3>
+                        <div class="card-address">
+                            <ul id="address-icon">
+                                <i class="fas fa-user"></i>
+                            </ul>
+                            <address id="address">
+                                {{ adresse.country }} , {{ adresse.city }} ,
+                                {{ adresse.street }} {{ adresse.hous_number }}<br>
+                            </address>
+                            <hr>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
-
     </div>
 </div>
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
+<div class="modal fade" id="myModal">
+    <button type="button" class="close" id="close-btn" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog" role="document">
         <img class="picture-modal-img">
-
-        <!--
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      </div>
-
-
-                      <div class="modal-body">
-
-                      </div>
-
-
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-              -->
     </div>
 </div>
-
 <footer class="footer">
     <div class="container">
-        <h3 class="text-muted">Powered by my self</h3>
+        <span class="text-muted">There is nothing to see</span>
     </div>
 </footer>
 </body>
-
 </html>

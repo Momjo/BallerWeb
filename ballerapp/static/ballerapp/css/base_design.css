@@ -1,152 +1,178 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../icomoon/icomoon.eot');
+	src:url('../icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../icomoon/icomoon.woff') format('woff'),
+		url('../icomoon/icomoon.ttf') format('truetype'),
+		url('../icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+    font-family: "Raleway", sans-serif
+}
+
 .img-fluid {
     max-width: 100%;
     height: auto;
 }
 
-
-/* Cards */
-
-
-/*.jumbotron {
-    background-color: #070908 !important;
-
-}*/
-
-.test {
-    margin-left: -148px;
-    margin-right: -139px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Raleway", sans-serif
-}
-
-.cards {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    font-size: 16px;
-    background-color: #fff;
-    color: #111;
-    line-height: 1.2em;
-}
-
-.cards *,
-.cards *:before,
-.cards *:after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-}
-
-.cards img {
-    max-width: 100%;
-    vertical-align: top;
-    padding-bottom: 12px;
-}
-
-
-
-.cards address {
-    font-size: 1.6rem;
-    font-weight: 500;
-    margin: 0 0 4px;
-    color: #3a3333;
-    padding-left: 47px;
-    width: 250%;
+.color-5{
+    display: inline-flex;
 
 }
 
-
-
-.cards .icons {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.card-details{
+    margin-top:50px;
+    display:inline-flex;
+    margin-bottom: 40px;
 }
-
-.cards .icons a {
-    margin: 2px;
-    opacity: 0;
-    -webkit-transform: translateY(50%);
-    transform: translateY(50%);
-    text-decoration: none;
-
-
+.card-address{
+    display:inline-flex;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.651);
+    width:354px;
+    padding-bottom: 13px;
 }
-
-.cards .icons a i {
-    display: block;
-    font-size: 23.52941176px;
-    line-height: 40px;
-    width: 40px;
-    background-color: #77777757;
-    text-align: center;
-    color: #39CCCC;
-    
-}
-.cards .icons a i:hover{
-    background-color: #777777d1;
-    transition: all 0.50s;
-}
-
-
-
-
-.cards:hover a,
-.cards.hover a {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-
-}
-
-.cards:hover a:nth-child(2),
-.cards.hover a:nth-child(2) {
-    -webkit-transition-delay: 0.1s;
-    transition-delay: 0.1s;
-}
-
-.cards:hover a:nth-child(3),
-.cards.hover a:nth-child(3) {
-    -webkit-transition-delay: 0.2s;
-    transition-delay: 0.2s;
-}
-
-.cards:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.cards span {
-    font-size: 1.8em;
-    left: auto;
-    right: 134px;
-    top: 14px;
-}
-
 .text-on-pannel {
     background: rgb(255, 255, 255) none repeat scroll 0 0;
     height: auto;
-    margin-left: 25%;
     padding: 3px 2px;
     position: absolute;
-    margin-top: -47px;
-    color: rgba(92, 92, 92, 0.651)
+    margin-top: -42px;
+    color: rgba(92, 92, 92, 0.651);
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.651);
+    line-height: 0.1em;
+
+}
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+#address-icon{
+    padding-right:16px;
 }
 
+.underline{
+    border-bottom: 1px solid black;
+}
+
+h3 span {
+    background:#fff;
+    padding:0 10px;
+}
+.btn {
+    border-radius: 0px;
+	border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 15px 23px;
+    display: inline-block;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon-cart:before {
+	content: "\e9ca";
+}
+
+
+
+.btn-5 {
+    height: 48px;
+    min-width: 177px;
+    line-height: 20px;
+    font-size: 15px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.btn-5:active {
+	background: #9053a9;
+}
+
+.btn-5 span {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.btn-5:before {
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 1.9;
+    font-size: 180%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-5:active:before {
+	color: #703b87;
+}
+
+.btn-5a:hover span {
+	-webkit-transform: translateY(300%);
+	-moz-transform: translateY(300%);
+	-ms-transform: translateY(300%);
+	transform: translateY(300%);
+}
+
+.btn-5a:before {
+	left: 0;
+	top: -100%;
+}
+
+.btn-5a:hover:before {
+	top: 0;
+}
+
+
 .panel {
-    /* for text on pannel */
     border-radius: 0px;
     border-left-style: none;
     border-right-style: none;
@@ -156,21 +182,34 @@ body {
     padding-top: 30px !important;
 }
 
-
 .modal-dialog{
     padding-top: 10%;
 }
 
-body {
-    background-color: rgba(247, 242, 242, 0.39);
+#close-btn{
+    margin: 80px 14px;
+    font-size: 3.5rem;
+    color: #fffdfd;
 }
 
 .row {
     padding-top: 35px;
 }
 
+body.modal-open .row{
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
 
-/* Profile */
+}
+
+
+.picture-modal-img{
+    max-width: 150%;
+    min-width: 50%;
+}
 
 #profile {
     border-radius: 50%;
@@ -178,20 +217,21 @@ body {
     margin-top: 3px;
 }
 
-.footer>.container {
+
+
+.footer > .container {
     padding-right: 15px;
     padding-left: 15px;
 }
 
-
-/* footer */
-
 .footer {
-    background-color: #222222;
+    background-color: #343a40;
     padding-top: 25px;
     margin-top: 118px;
+    text-align:center;
 }
 
 .container-fluid {
     box-shadow: 0 10px 53px #7474747d;
 }
+
