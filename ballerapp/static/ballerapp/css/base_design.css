@@ -235,3 +235,12 @@ body.modal-open .row{
     box-shadow: 0 10px 53px #7474747d;
 }
 
+.navbar-brand{
+    padding-left: 7px;
+    margin-top: 5px;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}

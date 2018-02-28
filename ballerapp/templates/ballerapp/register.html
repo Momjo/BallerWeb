@@ -1,38 +1,50 @@
-
 {% load static %}
-<!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <title>BallerWeb</title>
-        <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}" />
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="modal-dialog" >
-                        <div class="modal-content">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Register</h3>
-                            </div>
-                            <div class="panel-body">
-                                {% if registered %}
-                                    thank for registering
-                                    <br>
-                                    <a href="/ballerweb/home/" class="btn btn-sm btn-success" role="button"> Back To home </a>
-                                {% else %}
-                                    <form id="user_form" method="post" action="/ballerweb/register/" enctype="multipart/form-data">
-                                        {% csrf_token %}
-                                        {{user_form.as_p}}
-                                        {{profile_form.as_p}}
-                                        <input class="btn btn-sm btn-success" type="submit" name="submit" value="Register">
-                                        <a href="/ballerweb/home/" class="btn btn-sm btn-success" role="button"> Back To home </a>
-                                    </form>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
+<head>
+    <title>BallerWeb</title>
+    <link rel="stylesheet" href="{% static 'ballerapp/css/base_design.css' %}"/>
+    <link rel="stylesheet" href="{% static 'ballerapp/css/bootstrap.css' %}"/>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center;">Register</h1>
+
+    <div class="row">
+        <div class="center_div " style="width:30%">
+            {% if registered %}
+            <p>thank for registering</p>
+            <br>
+            <button class="btn btn-primary" onclick="window.location.href='/ballerweb/home/'"
+                    style="width:100% ; margin-top: 7px;">Back To home
+            </button>
+            {% else %}
+            <form id="user_form" method="post" action="/ballerweb/register/" enctype="multipart/form-data">
+                {%csrf_token%}
+                {% for error in form.non_field_errors %}
+                <div class="form-group has-errors text-danger small">
+                    {{error}}
                 </div>
-            </div><!--  end row  -->
-        </div><!--  end container  -->
-    </body>
+                {% endfor %}
+                {% for field in user_form %}
+                <div class="form-group has-errors text-danger small">
+                    {{field.errors}}
+                </div>
+                <div class="form-group has-errors text-danger small">
+                </div>
+                <div class="form-group">
+                    {{field}}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary" value="Register" style="width:100%">Login
+                </button>
+
+                <button class="btn btn-primary" onclick="window.location.href='/ballerweb/home/'"
+                        style="width:100% ; margin-top: 7px;">Back To home
+                </button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
