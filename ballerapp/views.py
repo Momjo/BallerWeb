@@ -1,17 +1,15 @@
 
 from ballerapp.forms import(
            UserForm,
-           #UserProfileForm,
            AddNewPlace,
            UserLoginForm
         )
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.contrib import auth
-from django.shortcuts import render, render_to_response, redirect
-from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
 from ballerapp.models import Adresse
 from django.views.generic.list import ListView
-from django.views.generic import TemplateView
+
 
 
 """def index(request):

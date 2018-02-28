@@ -6,12 +6,13 @@ from django import forms
 
 
 class Adresse(models.Model):
-    country = models.CharField(max_length=20)
-    city = models.CharField(max_length=20)
-    street = models.CharField(max_length=20)
-    hous_number = models.CharField(max_length=15)
-    #pub_date = models.DateTimeField('date published', null=True)
+    country = models.CharField(max_length=20,)
+    city = models.CharField(max_length=20,)
+    street = models.CharField(max_length=20,)
+    hous_number = models.CharField(max_length=15,)
     place_pic = models.FileField(upload_to='place_pic', blank=True)
+    #pub_date = models.DateTimeField('date published', null=True)
+
     #def was_published_recently(self):
     #   return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
      #   add the id for users id
