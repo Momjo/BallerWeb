@@ -63,30 +63,27 @@
                         <section class="color-5">
                             <p id="btn-location">
                                 <a onclick="showImage('https://maps.googleapis.com/maps/api/staticmap?center={{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}&zoom=18&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C{{ adresse.city }}+{{ adresse.street }}+{{ adresse.hous_number }}')">
-                                    <button class="btn btn-5 btn-5a icon-cart btn-secondary"><span>Location</span>
+                                    <button class="btn btn-5 btn-5a icon-location btn-secondary">Location
                                     </button>
                                 </a>
                             </p>
                             <p id="btn-court">
                                 {% if adresse.place_pic %}
                                 <a onclick="maximize( '{{ adresse.place_pic.url}}' )">
-                                    <button class="btn btn-5 btn-5a icon-cart btn-secondary"><span>Court</span></button>
+                                    <button class="btn btn-5 btn-5a icon-plus btn-secondary">Court</button>
                                 </a>
                                 {% endif %}
                             </p>
                         </section>
                     </div>
                     <div class="card-details">
-                        <h3 class=" text-on-pannel">
-                            <span>
-                                <strong>Address</strong>
-                            </span>
+                        <h3 class="text-on-pannel">
+                            <strong style="background-color: white;">Address</strong>
                         </h3>
                         <div class="card-address">
-                            <ul id="address-icon">
-                                <i class="fas fa-map-marker-alt fa-lg"></i>
-                            </ul>
+
                             <address id="address">
+                                <i class="fas fa-map-marker-alt fa-lg"></i>
                                 {{ adresse.country }} , {{ adresse.city }} ,
                                 {{ adresse.street }} {{ adresse.hous_number }}<br>
                             </address>
