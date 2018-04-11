@@ -97,6 +97,8 @@ h3 span {
 
 .modal-dialog{
     padding-top: 10%;
+    text-align: center;
+    vertical-align: bottom;
 }
 
 #close-btn{
@@ -122,6 +124,7 @@ body.modal-open .row{
 .picture-modal-img{
     max-width: 150%;
     min-width: 50%;
+
 }
 
 #profile {
@@ -155,5 +158,26 @@ body.modal-open .row{
 
 .center_div{
     margin: 0 auto;
-    width:80% /* value of your choice which suits your alignment */
+    width:80%;
+}
+.center_div h1{
+    color: white;
+}
+
+.center_div{
+    width: 18%;
+    margin-top: 5%;
+    position: fixed;
+}
+
+.forms-background{
+    position: fixed;
+    filter: blur(5px);
+}
+.forms-background > img{
+    width: 100%;
+    height: 100%;
+}
+.forms-body{
+    background-color: black;
 }

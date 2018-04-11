@@ -41,3 +41,4 @@ media/
 celerybeat-schedule
 # Ignore Sphinx documentation
 docs/
+.DS_Store
